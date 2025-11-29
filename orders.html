@@ -311,7 +311,7 @@
               minute: '2-digit'
             });
           }
-          if (!order.status) order.status = 'Pending';
+          if (!order.status) order.status = 'Confirmed';
           if (!order.id) order.id = Date.now() + Math.random();
           return order;
         }).sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by newest first
@@ -338,7 +338,7 @@
       const statsDiv = document.getElementById('ordersStats');
       const totalOrders = filteredOrders.length;
       const totalAmount = filteredOrders.reduce((sum, order) => sum + (order.total || 0), 0);
-      const pendingOrders = filteredOrders.filter(o => o.status === 'Pending').length;
+      const pendingOrders = filteredOrders.filter(o => o.status === 'Confirmed').length;
 
       statsDiv.innerHTML = `
         <div class="stat-card">
@@ -353,7 +353,7 @@
         </div>
         <div class="stat-card">
           <i class="fas fa-clock"></i>
-          <h3>${PendingOrders}</h3>
+          <h3>${pendingOrders}</h3>
           <p>Pending Orders</p>
         </div>
       `;
@@ -411,8 +411,8 @@
                   })}
                 </div>
               </div>
-              <div class="order-status ${(order.status || 'pending').toLowerCase()}">
-                ${order.status || 'Pending'}
+              <div class="order-status ${(order.status || 'confirmed').toLowerCase()}">
+                ${order.status || 'Confirmed'}
               </div>
             </div>
             <div class="order-card-body">
@@ -523,5 +523,6 @@
   </script>
 </body>
 </html>
+
 
 
