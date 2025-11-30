@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | A&J Kitchen</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      color: #1a1a1a;
+      overflow: hidden;
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .wrapper {
+      max-width: 500px;
+      padding: 20px;
+      position: relative;
+      z-index: 5;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      color: #0149ff;
+      margin-bottom: 10px;
+      animation: glow 2s infinite alternate ease-in-out;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 8px rgba(1, 73, 255, 0.3); }
+      to   { text-shadow: 0 0 18px rgba(1, 73, 255, 0.6); }
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      color: #555;
+      animation: fadeIn 1.6s ease forwards;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      background: #ffcc00;
+      padding: 12px 22px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #000;
+      transition: 0.25s ease, transform 0.25s ease;
+      animation: fadeIn 1.9s ease forwards;
+    }
+
+    .btn:hover {
+      background: #e6b800;
+      transform: scale(1.05) rotate(-2deg);
+    }
+
+    /* Floating food icons */
+    .floating {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.35;
+      animation: floatUp 10s infinite ease-in;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(100vh) rotate(0deg); }
+      to   { transform: translateY(-20vh) rotate(360deg); }
+    }
+
+    /* Random positions */
+    .f1 { left: 10%; animation-duration: 11s; }
+    .f2 { left: 40%; animation-duration: 13s; animation-delay: 1s; }
+    .f3 { left: 70%; animation-duration: 9s;  animation-delay: 0.5s; }
+    .f4 { left: 85%; animation-duration: 14s; animation-delay: 2s; }
+    .f5 { left: 25%; animation-duration: 12s; animation-delay: 1.5s; }
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating Food Decorations -->
+  <div class="floating f1">🍗</div>
+  <div class="floating f2">🍛</div>
+  <div class="floating f3">🥘</div>
+  <div class="floating f4">🍽️</div>
+  <div class="floating f5">🥗</div>
+
+  <div class="wrapper">
+    <div class="food-emoji" style="font-size: 3rem; margin-bottom: 10px;">🍽️</div>
+    <h1>404</h1>
+    <p>Sorry, The page you're looking for is still cooking.</p>
+    <p>Let’s get you back to something delicious.</p>
+
+    <a href="index.html" class="btn">Return Home</a>
+  </div>
+
+</body>
+</html>
